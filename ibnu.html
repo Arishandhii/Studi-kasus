@@ -1,0 +1,66 @@
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+
+int main(){
+	string brg1,brg2;
+	int a, total;
+	int hrg1 = 17000;
+	int hrg2 = 21000;
+	int jml, hasil, dis,slrh;
+	char x;
+	
+	cout<<"KEDAI PAK WALUYO"<<endl;
+	cout<<"1. Ayam Goreng\t = Rp.17.000 "<<endl;
+	cout<<"2. Ayam Bakar\t = Rp.21.000 "<<endl;
+	
+	menu:
+	
+	cout<<"Masukkan menu yang dibeli : ";cin>>a;
+	
+	switch(a)
+	case 1:
+	{
+		cout<<"Menu   : Ayam Goreng "<<endl;
+		cout<<"Jumlah : ";cin>>jml;
+		hasil=jml*hrg1;
+		total+=hasil;
+	break;
+		
+	case 2:
+		cout<<"Menu   : Ayam Bakar"<<endl;
+		cout<<"Jumlah : ";cin>>jml;
+		hasil=jml*hrg2;
+		total+= hasil;
+	break;
+	}
+	
+	cout<<"Apakah Anda ingin memesan lagi?"; cin>>x;
+	if(x=='y'){
+		goto menu;
+	}
+	else{
+		if(total>45000)
+		{
+			dis=(total*0.1);	
+			total=total-dis;
+		} 
+	else {
+		dis=0;	
+	}	
+	}
+	
+cout<<endl;
+cout<<"\t===== Struk Pembayaran ====="<<endl;
+cout<<"Makanan yang dipesan\t\t: ";
+if(a=1){
+		cout<<"Ayam Goreng"<<endl;
+	}
+	else{
+		cout<<"Ayam Bakar"<<endl;
+	}
+cout<<"Jumlah yang dibeli\t\t: "<<jml<<endl;
+cout<<"Diskon yang didapat\t\t: "<<dis<<endl;
+cout<<"Total pembayaran\t\t: "<<total<<endl;
+}
